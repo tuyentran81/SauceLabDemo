@@ -18,27 +18,27 @@ class ProductsPage extends BasePage {
     }
 
     async addProductToCart(productName: string) {
-        const productLink = this.page.getByTestId("inventory_item").filter({ hasText: `${productName}` });
-        const btnAddToCart = productLink.filter({ has: this.page.getByRole("button", {name: /add-to-cart/})});
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();       
+        const btnAddToCart = this.page.getByTestId(`add-to-cart-${regName}`);
         await btnAddToCart.click();
     }
 
     async removeProductFromCart(productName: string) {
-        const productLink = this.page.getByTestId("inventory_item").filter({ hasText: `${productName}` });
-        const btnRemove = productLink.filter({ has: this.page.getByRole("button", {name: /remove/})});
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();        
+        const btnRemove = this.page.getByTestId(`remove-${regName}`);
         await btnRemove.click();
     }
 
     async verifyRemoveButton(productName: string) {
-        const productLink = this.page.getByTestId("inventory_item").filter({ hasText: `${productName}` });
-        const btnRemove = productLink.filter({ has: this.page.getByRole("button", {name: /remove/})});
-        await (expect(btnRemove).toBeVisible());
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();        
+        const btnRemove = this.page.getByTestId(`remove-${regName}`);
+        await (expect.soft(btnRemove).toBeVisible());
     }
 
     async verifyAddToCartButton(productName: string) {
-        const productLink = this.page.getByTestId("inventory_item").filter({ hasText: `${productName}` });
-        const btnAddToCart = productLink.filter({ has: this.page.getByRole("button", {name: /add-to-cart/})});
-        await (expect(btnAddToCart).toBeVisible());
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();
+        const btnAddToCart = this.page.getByTestId(`add-to-cart-${regName}`);
+        await (expect.soft(btnAddToCart).toBeVisible());
     }
 
 }

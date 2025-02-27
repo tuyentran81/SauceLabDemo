@@ -2,7 +2,7 @@ import { test } from "../pages/fixtures/test-fixture";
 import { expect } from '@playwright/test';
 
 test.describe('Products Page', () => {
-    test('Verify the user is able to view the product detail',
+    test("Verify the user is able to view the product detail",
         { tag: ["@products", "@Demo4"] },
         async ({ loginPage, productsPage, productDetailPage }) => {
             const productName = "Sauce Labs Backpack";
@@ -25,16 +25,16 @@ test.describe('Products Page', () => {
             });
 
             await test.step("Step 1b: Verify the Add to cart button is displayed", async () => {
-                await (expect(productDetailPage.btnAddToCart).toBeVisible());
+                await (expect.soft(productDetailPage.btnAddToCart).toBeVisible());
             });
 
             await test.step("Step 1c: Verify the link Back to products is shown", async () => {
-                await (expect(productDetailPage.lnkBackToProduct).toBeVisible());
+                await (expect.soft(productDetailPage.lnkBackToProduct).toBeVisible());
             });
 
         });
 
-    test('Verify the user is able to add or remove the product from the Product Detail page',
+    test("Verify the user is able to add or remove the product from the Product Detail page",
         { tag: ["@products", "@Demo5"] },
         async ({ loginPage, productsPage, productDetailPage, header }) => {
             const productName = "Sauce Labs Backpack";
@@ -65,7 +65,7 @@ test.describe('Products Page', () => {
             });
 
             await test.step("The Add to cart button changes to Remove", async () => {
-                await (expect(productDetailPage.btnRemove).toBeVisible());
+                await (expect.soft(productDetailPage.btnRemove).toBeVisible());
             });
 
             await test.step("Step 3: Click on Remove button", async () => {
@@ -73,15 +73,15 @@ test.describe('Products Page', () => {
             });
 
             await test.step("Verify the number of products disappeared", async () => {
-                await (expect(header.lblCartBadge).toBeHidden());
+                await (expect.soft(header.lblCartBadge).toBeHidden());
             });
 
             await test.step("The Remove button is changed to Add to cart button", async () => {
-                await (expect(productDetailPage.btnAddToCart).toBeVisible());
+                await (expect.soft(productDetailPage.btnAddToCart).toBeVisible());
             });
         });
 
-    test('Verify the user is able to add and remove one or more products from Product page',
+    test("Verify the user is able to add and remove one or more products from Product page",
         { tag: ["@products", "@Demo3"] },
         async ({ loginPage, productsPage, header }) => {
             const product1 = "Sauce Labs Backpack";
@@ -138,7 +138,7 @@ test.describe('Products Page', () => {
             });
 
             await test.step("Verify the number of products disappeared", async () => {
-                await (expect(header.lblCartBadge).toBeHidden());
+                await (expect.soft(header.lblCartBadge).toBeHidden());
             });
 
             await test.step("The Remove button is changed to Add to cart button", async () => {

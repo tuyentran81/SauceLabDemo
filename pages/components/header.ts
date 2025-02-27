@@ -17,8 +17,13 @@ class Header extends BasePage {
     }
 
     async verifyCartBadgeCount(count: number) {
-        await (expect(this.lblCartBadge).toHaveText(count.toString()));
+        await (expect.soft(this.lblCartBadge).toHaveText(count.toString()));
     }
+
+    async clickCartIcon() {       
+        await this.lnkShoppingCart.click();
+    }
+
 }
 
 export default Header;

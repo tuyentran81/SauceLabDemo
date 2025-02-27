@@ -13,7 +13,7 @@ test.describe('Login Page', () => {
 
             // Step 2: Verify the user is navigated to the Products page
             await test.step("Step 2: Verify the user is navigated to the Products page", async () => {
-                await expect(productsPage.lblPageTitle).toHaveText('Products');
+                await expect.soft(productsPage.lblPageTitle).toHaveText('Products');
             });
         });
 
@@ -30,8 +30,8 @@ test.describe('Login Page', () => {
 
             // Step 2: Verify the error message is displayed
             await test.step("Step 2: Verify the error message is displayed", async () => {
-                await expect(loginPage.lblErrorMsg).toBeVisible();
-                await expect(loginPage.lblErrorMsg).toHaveText(errorMsg);
+                await expect.soft(loginPage.lblErrorMsg).toBeVisible();
+                await expect.soft(loginPage.lblErrorMsg).toHaveText(errorMsg);
             });
         });
 });

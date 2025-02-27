@@ -22,11 +22,11 @@ class ProductDetailPage extends BasePage {
     }
 
     async verifyProductDetailsOverview(title: string, description: string) {
-        await (expect(this.lblProductTitle).toBeVisible());
-        await (expect(this.lblProductTitle).toHaveText(title));
-        await (expect(this.lblProductDescription).toBeVisible());
-        await (expect(this.lblProductDescription).toHaveText(description));
-        await (expect(this.imgProductImage).toBeVisible());
+        await (expect.soft(this.lblProductTitle).toBeVisible());
+        await (expect.soft(this.lblProductTitle).toHaveText(title));
+        await (expect.soft(this.lblProductDescription).toBeVisible());
+        await (expect.soft(this.lblProductDescription).toHaveText(description));
+        await (expect.soft(this.imgProductImage).toBeVisible());
     }
 
     async addProductToCart() {

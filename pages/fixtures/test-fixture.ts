@@ -3,6 +3,7 @@ import LoginPage from '../loginpage';
 import ProductsPage from '../productspage';
 import ProductDetailPage from '../productdetailspage';
 import Header from '../components/header';
+import CartPage from "../cartpage";
 import Env from "../../settings/env/env.global";
 
 type AEPages = {
@@ -10,6 +11,7 @@ type AEPages = {
     productsPage: ProductsPage;
     productDetailPage: ProductDetailPage;
     header: Header;
+    cartPage: CartPage;
 };
 
 export const test = base.extend<AEPages>({
@@ -25,7 +27,11 @@ export const test = base.extend<AEPages>({
     },
     header: async ({ page }, use) => {
         await use(new Header({ page }));
+    },
+    cartPage: async ({ page }, use) => {
+        await use(new CartPage({ page }));
     }
+
 });
 
 test.beforeEach(async ({ page }) => {
