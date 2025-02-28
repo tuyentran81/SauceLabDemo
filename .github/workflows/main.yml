@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          path: SauceLabDemo  # ✅ Ensures correct directory structure
 
       - name: Debug Folder Structure
         run: pwd && ls -R SauceLabDemo  # ✅ Verify that repo is at /home/runner/work/SauceLabDemo/SauceLabDemo
