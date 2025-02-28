@@ -14,11 +14,12 @@ The structure is below
 ```
 Project Name
 │── pages
-|   |__ cart: contains cartPage which defines UI elements for Cart page.
+|   |── cart: contains cartPage which defines UI elements for Cart page.
 │   ├── components: defines each common component, for example, header, menu.
 │   ├── fixtures: defines the inital setup.
-|   |__ products: contains product pages.
-│   ├── page-name: contains each page to be used.
+|   |── login: contains loginPage with UI elements for Login page.
+|   |── products: contains product pages with UI elements for Product and Checkout page.
+│   ├── basePage: define base page.
 │── settings
 │   ├── env
 │   │   ├── env.local: defines the local environment variables.
