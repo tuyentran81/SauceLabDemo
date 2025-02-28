@@ -16,10 +16,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4  # ✅ Ensures correct repo checkout
-
-      - name: Debug Folder Structure
-        run: pwd && ls -R  # ✅ Check where files exist
-
+        
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,7 +30,7 @@ jobs:
 
       - name: Execute Automation Tests
         run: npx playwright test
-        
+
       - name: Upload Playwright Test Results (Artifacts)
         if: always()
         uses: actions/upload-artifact@v4
