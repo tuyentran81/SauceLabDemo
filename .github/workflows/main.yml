@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
+      - name: Debug Folder Structure
+        run: ls -R
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
