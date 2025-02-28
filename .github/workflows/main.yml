@@ -29,15 +29,15 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: SauceLabDemo  # ✅ Run inside correct directory
+        working-directory: SauceLabDemo/SauceLabDemo  # ✅ Run inside correct directory
 
       - name: Install Playwright
         run: npx playwright install
-        working-directory: SauceLabDemo  # ✅ Run inside correct directory
+        working-directory: SauceLabDemo/SauceLabDemo  # ✅ Run inside correct directory
 
       - name: Execute Automation Tests
         run: npx playwright test
-        working-directory: SauceLabDemo  # ✅ Run inside correct directory
+        working-directory: SauceLabDemo/SauceLabDemo  # ✅ Run inside correct directory
 
       - name: Upload Playwright Test Results (Artifacts)
         if: always()
