@@ -1,4 +1,4 @@
-import BasePage from "./basepage";
+import BasePage from "./basePage";
 import { Locator, Page } from "@playwright/test";
 import Env from "../settings/env/env.global";
 

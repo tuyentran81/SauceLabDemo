@@ -1,20 +1,22 @@
 import { test as base } from "@playwright/test";
-import LoginPage from '../loginpage';
-import ProductsPage from '../productspage';
-import ProductDetailPage from '../productdetailspage';
+import LoginPage from '../loginPage';
+import ProductsPage from '../productPage';
+import ProductDetailPage from '../produceDetailsPage';
 import Header from '../components/header';
-import CartPage from "../cartpage";
+import CartPage from "../cartPage";
+import CheckoutPage from "../checkoutPage";
 import Env from "../../settings/env/env.global";
 
-type AEPages = {
+type SauceLabs = {
     loginPage: LoginPage;
     productsPage: ProductsPage;
     productDetailPage: ProductDetailPage;
     header: Header;
     cartPage: CartPage;
+    checkoutPage: CheckoutPage;
 };
 
-export const test = base.extend<AEPages>({
+export const test = base.extend<SauceLabs>({
     loginPage: async ({ page }, use) => {
         await use(new LoginPage({ page }));
     },
@@ -30,8 +32,10 @@ export const test = base.extend<AEPages>({
     },
     cartPage: async ({ page }, use) => {
         await use(new CartPage({ page }));
-    }
-
+    },
+    checkoutPage: async ({ page }, use) => {
+        await use(new CheckoutPage({ page }));
+    },
 });
 
 test.beforeEach(async ({ page }) => {

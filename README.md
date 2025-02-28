@@ -1,10 +1,29 @@
 # SauceLab Demo Automation Project
-This repository contains the automation scripts in Playwright and TypeScript.
+Welcome to SauceLab Demo Automation Project !!!
+This is a sample project which is developed in Playwright and TypeScript.
 
 ## Table of Contents
+- [Structure](#structure)
 - [Environment Setup](#environment-setup)
 - [IDE](#ide)
-- [Execution](#execution)
+- [Execution commands](#execution)
+
+## Structure
+This project applied Page Object Model (POM) with 3A pattern (Arrange - Action - Assert).
+The structure is below
+```
+Project Name
+│── pages
+│   ├── components: defines each common component, for example, header, menu
+│   ├── fixtures: defines the inital setup.
+│   ├── page-name: contains each page to be used.
+│── settings
+│   ├── env
+│   │   ├── env.local: defines the local environment variables.
+│── testcases: contains the list of test cases in Excel file.
+│── tests: contains the list of automation tests.
+│── readme: the instructions
+```
 
 ## Environment Setup
 - NodeJS version: v22+ (currently v22.14.0)
@@ -16,28 +35,22 @@ This repository contains the automation scripts in Playwright and TypeScript.
 ## Execution
 - All environment variables are defined in .env file located in `./settings/env` folder</br>
 - Install necessary node packages:
-    ``` bash
+    ```
     npm install
     ```
 - Install Playwright dependencies:
-    ``` bash
+    ```
     npx playwright install
     ```
 - Execute all tests:
-    ``` bash
+    ```
     npx playwright test
     ```
 - Execute test by tag:
-    ``` bash
-    # Run test by tag
-    # Ex: npx playwright test -g "@home"
-    npx playwright test -g "@tag-name"
-
-    # Run test by excluding tag
-    # Ex: npx playwright test --grep-invert "@obsolete"
-    npx playwright test --grep-invert "@tag-name"
+    ```
+    npx playwright test -g "@login"
     ```
 - View the executed result
-    ```bash
+    ```
     npx playwright show-report
     ```

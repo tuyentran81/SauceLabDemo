@@ -1,4 +1,4 @@
-import BasePage from "./basepage";
+import BasePage from "./basePage";
 import { Locator, Page } from "@playwright/test";
 import { expect } from '@playwright/test';
 
@@ -41,6 +41,14 @@ class CartPage extends BasePage {
         const regName = `${productName}`.replace(/ /g, '-').toLowerCase();        
         const btnRemove = this.page.getByTestId(`remove-${regName}`);
         await btnRemove.click();
+    }
+
+    async clickCheckout() {
+        await this.btnCheckout.click();
+    }
+
+    async clickContinueShopping() {
+        await this.btnContinueShopping.click();
     }
 }
 

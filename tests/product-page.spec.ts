@@ -5,10 +5,10 @@ test.describe('Products Page', () => {
     test("Verify the user is able to view the product detail",
         { tag: ["@products", "@Demo4"] },
         async ({ loginPage, productsPage, productDetailPage }) => {
+            // Arrange
             const productName = "Sauce Labs Backpack";
             const productDescription = "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.";
 
-            // Arrange
             await test.step("Pre-condition: Login with standard user", async () => {
                 await loginPage.login();
                 await productsPage.lblPageTitle.waitFor({ state: 'visible' });
@@ -37,11 +37,11 @@ test.describe('Products Page', () => {
     test("Verify the user is able to add or remove the product from the Product Detail page",
         { tag: ["@products", "@Demo5"] },
         async ({ loginPage, productsPage, productDetailPage, header }) => {
+            // Arrange
             const productName = "Sauce Labs Backpack";
             const productDescription = "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.";
             const productNo = 1;
 
-            // Arrange
             await test.step("Pre-condition: Login with standard user", async () => {
                 await loginPage.login();
                 await productsPage.lblPageTitle.waitFor({ state: 'visible' });
@@ -84,11 +84,11 @@ test.describe('Products Page', () => {
     test("Verify the user is able to add and remove one or more products from Product page",
         { tag: ["@products", "@Demo3"] },
         async ({ loginPage, productsPage, header }) => {
+            // Arrange
             const product1 = "Sauce Labs Backpack";
             const product2 = "Sauce Labs Bolt T-Shirt";
             const productNo = 1;
 
-            // Arrange
             await test.step("Pre-condition: Login with standard user", async () => {
                 await loginPage.login();
                 await productsPage.lblPageTitle.waitFor({ state: 'visible' });

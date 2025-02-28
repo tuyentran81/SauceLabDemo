@@ -1,4 +1,4 @@
-import BasePage from "../basepage";
+import BasePage from "../basePage";
 import { Locator, Page } from "@playwright/test";
 import { expect } from '@playwright/test';
 
@@ -23,7 +23,6 @@ class Header extends BasePage {
     async clickCartIcon() {       
         await this.lnkShoppingCart.click();
     }
-
 }
 
 export default Header;

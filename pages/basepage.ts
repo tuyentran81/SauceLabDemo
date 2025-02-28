@@ -1,4 +1,4 @@
-import { Browser, Page, Locator } from "@playwright/test";
+import { Page } from "@playwright/test";
 
 class BasePage {
     protected readonly page: Page;
