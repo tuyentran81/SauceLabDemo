@@ -16,4 +16,8 @@ export default class Env {
     static get PASSWORD(): string {
         return process.env.PASSWORD || "";
     }
+
+    static get WAITING_TIME(): number {
+        return parseInt(process.env.WAITING_TIME || "1000");
+    }
 };
