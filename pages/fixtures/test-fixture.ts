@@ -1,10 +1,10 @@
 import { test as base } from "@playwright/test";
-import LoginPage from "../../pages/loginPage";
-import ProductsPage from "../../pages/productPage";
-import ProductDetailPage from '../../pages/produceDetailsPage';
+import LoginPage from "../../pages/login/loginPage";
+import ProductsPage from "../../pages/products/productPage";
+import ProductDetailPage from '../../pages/products/produceDetailsPage';
 import Header from "../../pages/components/header";
-import CartPage from "../../pages/cartPage";
-import CheckoutPage from "../../pages/checkoutPage";
+import CartPage from "../../pages/cart/cartPage";
+import CheckoutPage from "../../pages/products/checkoutPage";
 import Env from "../../settings/env/env.global";
 
 type SauceLabs = {

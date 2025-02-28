@@ -1,6 +1,6 @@
-import BasePage from "./basePage";
+import BasePage from "../../pages/basePage";
 import { Locator, Page } from "@playwright/test";
-import Env from "../settings/env/env.global";
+import Env from "../../settings/env/env.global";
 
 class LoginPage extends BasePage {
 

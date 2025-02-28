@@ -14,8 +14,10 @@ The structure is below
 ```
 Project Name
 │── pages
-│   ├── components: defines each common component, for example, header, menu
+|   |__ cart: contains cartPage which defines UI elements for Cart page.
+│   ├── components: defines each common component, for example, header, menu.
 │   ├── fixtures: defines the inital setup.
+|   |__ products: contains product pages.
 │   ├── page-name: contains each page to be used.
 │── settings
 │   ├── env
