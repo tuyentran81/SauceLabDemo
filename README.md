@@ -1,5 +1,5 @@
 # SauceLab Demo Automation Project
-Welcome to SauceLab Demo Automation Project !!!
+Welcome to SauceLab Demo Automation Project !!! <br>
 This is a sample project which is developed in Playwright and TypeScript.
 
 ## Table of Contents
