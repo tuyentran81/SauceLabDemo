@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   test:
@@ -16,9 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+        with:
+          path: SauceLabDemo  # ✅ Ensures correct directory structure
+
       - name: Debug Folder Structure
-        run: ls -R
+        run: pwd && ls -R SauceLabDemo  # ✅ Verify that repo is at /home/runner/work/SauceLabDemo/SauceLabDemo
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -26,17 +29,20 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: SauceLabDemo  # ✅ Run inside correct directory
 
       - name: Install Playwright
         run: npx playwright install
+        working-directory: SauceLabDemo  # ✅ Run inside correct directory
 
       - name: Execute Automation Tests
         run: npx playwright test
+        working-directory: SauceLabDemo  # ✅ Run inside correct directory
 
       - name: Upload Playwright Test Results (Artifacts)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
+          path: SauceLabDemo/playwright-report/
           retention-days: 7
