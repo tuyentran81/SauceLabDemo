@@ -1,5 +1,6 @@
 import { test } from "../pages/fixtures/test-fixture";
-import { expect } from '@playwright/test';
+import { expect } from "@playwright/test";
+import { faker } from "@faker-js/faker";
 
 test.describe('Products Page', () => {
     test("Verify the user is able to view his cart",
@@ -117,6 +118,9 @@ test.describe('Products Page', () => {
             const product2 = "Sauce Labs Bolt T-Shirt";
             const completeHeader = "Thank you for your order!";
             const completeText = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
+            const firstName = faker.name.firstName();
+            const lastName = faker.name.lastName();
+            const zipCode = faker.address.zipCode();
 
             await test.step("Pre-condition: Login with standard user", async () => {
                 await loginPage.login();
@@ -149,8 +153,8 @@ test.describe('Products Page', () => {
                 await (expect(checkoutPage.btnCancel).toBeVisible());
             });
 
-            await test.step("Step 3:  Input FirstName, LastName, and Zip Code", async () => {
-                await checkoutPage.fillUserInfo("John", "Doe", "12345");
+            await test.step("Step 3:  Input FirstName, LastName, and Zip Code", async () => {               
+                await checkoutPage.fillUserInfo(firstName, lastName, zipCode);
             });
 
             await test.step("Step 4: Click on Continue button", async () => {
