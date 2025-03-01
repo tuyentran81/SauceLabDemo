@@ -18,19 +18,19 @@ class ProductsPage extends BasePage {
     }
 
     async addProductToCart(productName: string) {
-        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();       
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();
         const btnAddToCart = this.page.getByTestId(`add-to-cart-${regName}`);
         await btnAddToCart.click();
     }
 
     async removeProductFromCart(productName: string) {
-        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();        
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();
         const btnRemove = this.page.getByTestId(`remove-${regName}`);
         await btnRemove.click();
     }
 
     async verifyRemoveButton(productName: string) {
-        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();        
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();
         const btnRemove = this.page.getByTestId(`remove-${regName}`);
         await (expect.soft(btnRemove).toBeVisible());
     }

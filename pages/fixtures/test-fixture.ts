@@ -20,7 +20,6 @@ export const test = base.extend<SauceLabs>({
     loginPage: async ({ page }, use) => {
         await use(new LoginPage({ page }));
     },
-    
     productsPage: async ({ page }, use) => {
         await use(new ProductsPage({ page }));
     },

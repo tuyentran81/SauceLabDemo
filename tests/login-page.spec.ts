@@ -23,7 +23,7 @@ test.describe('Login Page', () => {
             const invalidUser = "invalidUser";
             const invalidPassword = "invalidPassword";
             const errorMsg = 'Epic sadface: Username and password do not match any user in this service';
-            
+
             // Action
             await test.step("Login with standard user", async () => {
                 await loginPage.login(invalidUser, invalidPassword);

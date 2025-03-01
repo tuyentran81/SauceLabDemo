@@ -20,7 +20,7 @@ class CartPage extends BasePage {
     }
 
     async getProductName(productName: string): Promise<string> {
-        const productLocator = this.page.getByTestId("inventory-item-name").filter({hasText:`${productName}`});        
+        const productLocator = this.page.getByTestId("inventory-item-name").filter({ hasText: `${productName}` });
         return (await productLocator.textContent()) ?? "";
     }
 
@@ -28,7 +28,7 @@ class CartPage extends BasePage {
     async verifyProductQuantity(productName: string, quantity: number) {
         const actualQuantity = await this.getProductQuantity(productName);
         const actualProductName = await this.getProductName(productName);
-        
+
         expect.soft(actualProductName).toBe(productName);
         expect.soft(actualQuantity).toBe(quantity);
     }
@@ -38,7 +38,7 @@ class CartPage extends BasePage {
     }
 
     async removeProduct(productName: string) {
-        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();        
+        const regName = `${productName}`.replace(/ /g, '-').toLowerCase();
         const btnRemove = this.page.getByTestId(`remove-${regName}`);
         await btnRemove.click();
     }

@@ -20,7 +20,7 @@ class Header extends BasePage {
         await (expect.soft(this.lblCartBadge).toHaveText(count.toString()));
     }
 
-    async clickCartIcon() {       
+    async clickCartIcon() {
         await this.lnkShoppingCart.click();
     }
 }
