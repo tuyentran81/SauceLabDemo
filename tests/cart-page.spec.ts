@@ -118,9 +118,9 @@ test.describe('Products Page', () => {
             const product2 = "Sauce Labs Bolt T-Shirt";
             const completeHeader = "Thank you for your order!";
             const completeText = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
-            const firstName = faker.name.firstName();
-            const lastName = faker.name.lastName();
-            const zipCode = faker.address.zipCode();
+            const firstName = faker.person.firstName();
+            const lastName = faker.person.lastName();
+            const zipCode = faker.location.zipCode();
 
             await test.step("Pre-condition: Login with standard user", async () => {
                 await loginPage.login();
