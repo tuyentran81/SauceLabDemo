@@ -1,16 +1,16 @@
 [
   {
-    "title": "Verify the standard user is able to login successfully",
+    "title": "Verify the user logins unsuccessfully with invalid user and invalid password",
     "status": "passed",
-    "duration": 6779,
+    "duration": 9330,
     "error": null,
     "video": null,
     "screenshot": null
   },
   {
-    "title": "Verify the user logins unsuccessfully with invalid user and invalid password",
+    "title": "Verify the standard user is able to login successfully",
     "status": "passed",
-    "duration": 6775,
+    "duration": 9816,
     "error": null,
     "video": null,
     "screenshot": null
