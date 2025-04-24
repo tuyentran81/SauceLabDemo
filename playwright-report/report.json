@@ -2,15 +2,7 @@
   {
     "title": "Verify the user logins unsuccessfully with invalid user and invalid password",
     "status": "passed",
-    "duration": 9330,
-    "error": null,
-    "video": null,
-    "screenshot": null
-  },
-  {
-    "title": "Verify the standard user is able to login successfully",
-    "status": "passed",
-    "duration": 9816,
+    "duration": 8037,
     "error": null,
     "video": null,
     "screenshot": null

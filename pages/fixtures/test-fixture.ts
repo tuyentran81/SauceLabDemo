@@ -6,6 +6,7 @@ import Header from "../../pages/components/header";
 import CartPage from "../../pages/cart/cartPage";
 import CheckoutPage from "../../pages/products/checkoutPage";
 import Env from "../../settings/env/env.global";
+import { aiFixture, type AiFixture } from '@zerostep/playwright'
 
 type SauceLabs = {
     loginPage: LoginPage;
@@ -16,7 +17,11 @@ type SauceLabs = {
     checkoutPage: CheckoutPage;
 };
 
-export const test = base.extend<SauceLabs>({
+const testWithAI = base.extend<AiFixture>({
+    ...aiFixture(base),
+});
+
+export const test = testWithAI.extend<SauceLabs>({    
     loginPage: async ({ page }, use) => {
         await use(new LoginPage({ page }));
     },

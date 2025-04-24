@@ -17,16 +17,14 @@ test.describe('Login Page', () => {
         });
 
     test("Verify the user logins unsuccessfully with invalid user and invalid password",
-        { tag: ["@login", "@Demo2"] },
-        async ({ loginPage }) => {
+        { tag: ["@login", "@Demo21"] },
+        async ({ loginPage, ai }) => {
             // Arrange
-            const invalidUser = "invalidUser";
-            const invalidPassword = "invalidPassword";
             const errorMsg = 'Epic sadface: Username and password do not match any user in this service';
 
             // Action
             await test.step("Login with standard user", async () => {
-                await loginPage.login(invalidUser, invalidPassword);
+                await ai("Login with invalid user and password");
             });
 
             // Assert
